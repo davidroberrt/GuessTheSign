@@ -17,7 +17,8 @@ playground.xcworkspace
 
 # Swift Package Manager
 .build/
-
+# macOS files
+.DS_Store
 # CocoaPods
 Pods/         # Se você decidir manter os Pods versionados, remova este comentário
 # Add this line if you want to avoid checking in source code from the Xcode workspace
