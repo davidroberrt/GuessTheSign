@@ -32,9 +32,9 @@ struct MainMenuView: View {
                         Rectangle()
                             .frame(height: 58)
                             .clipShape(Capsule())
-                            .foregroundColor(Color.red.opacity(0.8))
+                            .foregroundColor(Color.red.opacity(0.7))
                             .overlay {
-                                Text("Começar")
+                                Text("Iniciar o Jogo")
                                     .foregroundStyle(.white)
                             }
                     }
