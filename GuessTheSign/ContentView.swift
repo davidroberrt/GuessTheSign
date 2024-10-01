@@ -64,22 +64,28 @@ struct ContentView: View {
         "R-8b Proibido mudar de faixa ou pista de trânsito da direita para esquerda",
         "R-9 Proibido trânsito de caminhões"
     ].shuffled()
-    
+    @State private var colorScore: Color = Color.blue
     @State private var correctAnswer = Int.random(in: 0...2)
-    
     @State private var scoreTitle = ""
     @State private var showingScore = false
     @State private var scoreNumber = 0
+    @State private var scoreRecord = 0
+    @Environment(\.dismiss) var dismiss // Adiciona a variável para fechar a view atual
+
     
     func SignTapped(_ number: Int){ // função analisará se a placa é correta ou não
         if number == correctAnswer{
-            scoreTitle = "Correct"
+            scoreTitle = "Correto"
             scoreNumber = scoreNumber + 1
+            askQuestion()
+            colorScore = .green
         } else{
-            scoreTitle = "Wrong"
+            scoreTitle = "Você perdeu"
+            scoreRecord = scoreNumber
             scoreNumber = 0
+            showingScore = true
+            colorScore = .blue
         }
-        showingScore = true
     }
     
     func askQuestion(){
@@ -87,39 +93,79 @@ struct ContentView: View {
         correctAnswer = Int.random(in: 0...2)
     }
     var body: some View {
-        
-        ZStack{
-            RadialGradient(colors: [.blue, .black], center: .center, startRadius: 0, endRadius: 300)
-            RadialGradient(colors: [.purple, .clear], center: .center, startRadius: 20, endRadius: 210).offset(x:120,y:100).opacity(0.3)
-            RadialGradient(colors: [.green, .clear], center: .center, startRadius: 20, endRadius: 200).offset(x:-120,y:-200).opacity(0.3)
-            VStack(spacing: 30){
-                VStack{
-                    Text("Tap the sign of").font(.subheadline.weight(.heavy))
-                    Text(regulatorySigns[correctAnswer]).font(.title.weight(.semibold))
-                }.foregroundColor(.white)
+        NavigationStack{
+            ZStack{
+                RadialGradient(colors: [.blue, .black], center: .center, startRadius: 0, endRadius: 300)
+                RadialGradient(colors: [.cyan, .clear], center: .center, startRadius: 20, endRadius: 200).offset(x:-120,y:-200).opacity(0.3)
+                RadialGradient(colors: [.purple, .clear], center: .center, startRadius: 20, endRadius: 210).offset(x:120,y:100).opacity(0.3)
                 
-                ForEach(0..<3){ number in
-                    Button{
-                        SignTapped(number)
-                    } label: {
-                        Image(regulatorySigns[number])
+                
+                VStack{
+                    HStack(){
+                        Image("logoWhite")
                             .resizable()
-                            .frame(width: 130, height: 130)
-                            .clipShape(.buttonBorder)
-                            .shadow(radius: 10)
+                            .frame(width: 50, height: 50)
+                        Spacer()
+                    }
+                    .padding()
+                    
+                    
+                    VStack{
+                        VStack{
+                            Text("Toque na placa:").font(.subheadline)
+                            Text(regulatorySigns[correctAnswer]).font(.title3.weight(.semibold))
+                                .padding(2)
+                        }.foregroundColor(.white)
+                        
+                        ForEach(0..<3){ number in
+                            Button{
+                                SignTapped(number)
+                            } label: {
+                                Image(regulatorySigns[number])
+                                    .resizable()
+                                    .frame(width: 130, height: 130)
+                                    .clipShape(.buttonBorder)
+                                    .shadow(radius: 10)
+                                    .padding(10)
+                            }
+                        }
+                        
+                    }
+                    HStack{
+                        Text("Pontuação: \(scoreNumber)").bold()
+                            .foregroundColor(.white)
+                            .foregroundStyle(.secondary)
+                            .font(.title3)
+                            .padding(15)
+                            .frame(width: .infinity, height: .infinity)
+                            .background(colorScore.opacity(0.3))
+                            .cornerRadius(20)
+                        Text("Recorde: \(scoreRecord)").bold()
+                            .foregroundColor(.white)
+                            .foregroundStyle(.secondary)
+                            .font(.title3)
+                            .padding(15)
+                            .frame(width: .infinity, height: .infinity)
+                            .background(.yellow.opacity(0.3))
+                            .cornerRadius(20)
                     }
                 }
             }
+            .alert(scoreTitle, isPresented: $showingScore){
+                Button("Retornar ao menu principal"){
+                    dismiss()
+                }
+                Button("Continuar", action: askQuestion)
+            } message: {
+                Text("Seu recorde de pontuação foi \(scoreRecord)")
+            }
+            .ignoresSafeArea()
+
         }
-        .ignoresSafeArea()
-        .alert(scoreTitle, isPresented: $showingScore){
-            Button("Continue", action: askQuestion)
-        } message: {
-            Text("You score is \(scoreNumber)")
-        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    ContentView()
+    SplashView()
 }

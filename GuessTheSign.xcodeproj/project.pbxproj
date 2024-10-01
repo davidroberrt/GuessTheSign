@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A08458282CA498B0001C5B76 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08458272CA498B0001C5B76 /* MainMenuView.swift */; };
+		A08458302CAB1846001C5B76 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084582F2CAB1846001C5B76 /* GameView.swift */; };
+		A08458332CAB18D3001C5B76 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08458322CAB18D3001C5B76 /* GameViewModel.swift */; };
+		A0BB68C42C9F181E009852BE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BB68C32C9F181E009852BE /* SplashView.swift */; };
 		A0E852D82C9959CC0050BF8B /* GuessTheSignApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E852D72C9959CC0050BF8B /* GuessTheSignApp.swift */; };
 		A0E852DA2C9959CC0050BF8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E852D92C9959CC0050BF8B /* ContentView.swift */; };
 		A0E852DC2C9959CE0050BF8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E852DB2C9959CE0050BF8B /* Assets.xcassets */; };
 		A0E852DF2C9959CE0050BF8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E852DE2C9959CE0050BF8B /* Preview Assets.xcassets */; };
+		A0ED62A52CA1B05300B3FB7E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ED62A42CA1B05300B3FB7E /* OnboardingView.swift */; };
+		A0ED62AB2CA3243500B3FB7E /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ED62AA2CA3243500B3FB7E /* OnboardingStep.swift */; };
+		A0ED62AD2CA3245700B3FB7E /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ED62AC2CA3245700B3FB7E /* OnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A08458272CA498B0001C5B76 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		A084582F2CAB1846001C5B76 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		A08458322CAB18D3001C5B76 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		A0BB68C32C9F181E009852BE /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		A0E852D42C9959CC0050BF8B /* GuessTheSign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheSign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E852D72C9959CC0050BF8B /* GuessTheSignApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheSignApp.swift; sourceTree = "<group>"; };
 		A0E852D92C9959CC0050BF8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A0E852DB2C9959CE0050BF8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0E852DE2C9959CE0050BF8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A0ED62A42CA1B05300B3FB7E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A0ED62AA2CA3243500B3FB7E /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
+		A0ED62AC2CA3245700B3FB7E /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +46,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A084581C2CA494EE001C5B76 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A084582A2CAB177D001C5B76 /* ViewModel */,
+				A08458292CAB1771001C5B76 /* Model */,
+				A084581D2CA49526001C5B76 /* View */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		A084581D2CA49526001C5B76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A08458272CA498B0001C5B76 /* MainMenuView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A08458292CAB1771001C5B76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A084582A2CAB177D001C5B76 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A084582B2CAB17B3001C5B76 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				A084582E2CAB1808001C5B76 /* ViewModel */,
+				A084582D2CAB1803001C5B76 /* Model */,
+				A084582C2CAB17C7001C5B76 /* View */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		A084582C2CAB17C7001C5B76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A084582F2CAB1846001C5B76 /* GameView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A084582D2CAB1803001C5B76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A084582E2CAB1808001C5B76 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A08458322CAB18D3001C5B76 /* GameViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A0BB68C22C9F1802009852BE /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A0BB68C32C9F181E009852BE /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		A0BB68C52C9F18F4009852BE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A0ED62A92CA3063A00B3FB7E /* Model */,
+				A0ED62A82CA3063500B3FB7E /* View */,
+				A0ED62A72CA3061600B3FB7E /* ViewModel */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		A0E852CB2C9959CC0050BF8B = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +148,10 @@
 		A0E852D62C9959CC0050BF8B /* GuessTheSign */ = {
 			isa = PBXGroup;
 			children = (
+				A084582B2CAB17B3001C5B76 /* Game */,
+				A0BB68C22C9F1802009852BE /* Splash */,
+				A0BB68C52C9F18F4009852BE /* Onboarding */,
+				A084581C2CA494EE001C5B76 /* MainMenu */,
 				A0E852D72C9959CC0050BF8B /* GuessTheSignApp.swift */,
 				A0E852D92C9959CC0050BF8B /* ContentView.swift */,
 				A0E852DB2C9959CE0050BF8B /* Assets.xcassets */,
@@ -65,6 +166,30 @@
 				A0E852DE2C9959CE0050BF8B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0ED62A72CA3061600B3FB7E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A0ED62AC2CA3245700B3FB7E /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A0ED62A82CA3063500B3FB7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0ED62A42CA1B05300B3FB7E /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0ED62A92CA3063A00B3FB7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0ED62AA2CA3243500B3FB7E /* OnboardingStep.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +262,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08458332CAB18D3001C5B76 /* GameViewModel.swift in Sources */,
 				A0E852DA2C9959CC0050BF8B /* ContentView.swift in Sources */,
+				A08458282CA498B0001C5B76 /* MainMenuView.swift in Sources */,
+				A08458302CAB1846001C5B76 /* GameView.swift in Sources */,
+				A0ED62AD2CA3245700B3FB7E /* OnboardingViewModel.swift in Sources */,
 				A0E852D82C9959CC0050BF8B /* GuessTheSignApp.swift in Sources */,
+				A0ED62A52CA1B05300B3FB7E /* OnboardingView.swift in Sources */,
+				A0ED62AB2CA3243500B3FB7E /* OnboardingStep.swift in Sources */,
+				A0BB68C42C9F181E009852BE /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
