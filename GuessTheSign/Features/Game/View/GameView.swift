@@ -29,8 +29,8 @@ struct GameView: View {
                     
                     VStack{
                         VStack{
-                            Text("Toque na placa:").font(.subheadline)
-                            Text(viewModel.regulatorySigns[viewModel.correctAnswer].title).font(.title3.weight(.semibold))
+                            Text("Toque na placa:").font(.subheadline).bold()
+                            Text(viewModel.regulatorySigns[viewModel.correctAnswer].title).font(.title2.weight(.semibold))
                                 .padding(2)
                         }.foregroundColor(.white)
                         
@@ -46,6 +46,7 @@ struct GameView: View {
                                     .padding(10)
                             }
                         }
+                        
                     }
                     HStack{
                         Text("Pontuação: \(viewModel.scoreNumber)").bold()
@@ -53,7 +54,7 @@ struct GameView: View {
                             .foregroundStyle(.secondary)
                             .font(.title3)
                             .padding(15)
-                            .frame(width: .infinity, height: 60)
+                            .frame(width: 190, height: 60)
                             .background(viewModel.colorScore.opacity(0.3))
                             .cornerRadius(20)
                         Text("Recorde: \(viewModel.scoreRecord)").bold()
@@ -61,7 +62,7 @@ struct GameView: View {
                             .foregroundStyle(.secondary)
                             .font(.title3)
                             .padding(15)
-                            .frame(width: .infinity, height: 60)
+                            .frame(width: 190, height: 60)
                             .background(.yellow.opacity(0.3))
                             .cornerRadius(20)
                     }
