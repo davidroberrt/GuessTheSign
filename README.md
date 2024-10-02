@@ -24,6 +24,9 @@ Guess the Sign é um jogo educativo desenvolvido em SwiftUI, que desafia os joga
 3. Tente adivinhar o sinal de trânsito apresentado.
 4. Ganhe pontos por respostas corretas e avance nos níveis!
 
+![Pale Beige Minimalist New in Store Promo Phone Frame Animated Mobile Video ](https://github.com/user-attachments/assets/1643a590-8e76-4ca7-b3b2-b71a891e1fb6)
+
+
 ## Instalação
 
 Para rodar o projeto localmente, siga os passos abaixo:
