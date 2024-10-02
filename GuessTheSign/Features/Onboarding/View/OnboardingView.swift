@@ -6,9 +6,7 @@ struct OnboardingView: View {
     var body: some View {
         NavigationStack {
             ZStack{
-                RadialGradient(colors: [.blue, .black], center: .center, startRadius: 0, endRadius: 300)
-                RadialGradient(colors: [.cyan, .clear], center: .center, startRadius: 20, endRadius: 200).offset(x:-120,y:-200).opacity(0.3)
-                RadialGradient(colors: [.purple, .clear], center: .center, startRadius: 20, endRadius: 210).offset(x:120,y:100).opacity(0.3)
+                GradientBG()
                 VStack {
                     TabView(selection: $viewModel.currentStep) {
                         ForEach(0..<viewModel.onboardingSteps.count, id: \.self) { index in
@@ -111,7 +109,7 @@ struct OnboardingView: View {
                     }
             }
         } else {
-            NavigationLink(destination: MainMenuView()) {
+            NavigationLink(destination: MainMenuView(viewModel: MainMenuViewModel())) {
                 Rectangle()
                     .frame(height: 58)
                     .clipShape(Capsule())
@@ -127,4 +125,12 @@ struct OnboardingView: View {
 
 #Preview {
     OnboardingView()
+}
+
+struct GradientBG: View {
+    var body: some View{
+        RadialGradient(colors: [.blue, .black], center: .center, startRadius: 0, endRadius: 300)
+        RadialGradient(colors: [.cyan, .clear], center: .center, startRadius: 20, endRadius: 200).offset(x:-120,y:-200).opacity(0.3)
+        RadialGradient(colors: [.purple, .clear], center: .center, startRadius: 20, endRadius: 210).offset(x:120,y:100).opacity(0.3)
+    }
 }

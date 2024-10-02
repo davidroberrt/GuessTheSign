@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct SplashView: View {    
+struct SplashView: View {
     
     @State private var offSetValue: CGFloat = 0
     @State private var colorTest: Color = .blue
@@ -45,7 +45,6 @@ struct SplashView: View {
         } else{
             OnboardingView()
         }
-        
     }
 }
 #Preview {
